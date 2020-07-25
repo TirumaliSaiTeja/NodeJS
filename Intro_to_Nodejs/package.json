@@ -1,0 +1,17 @@
+{
+  "name": "intro_to_nodejs",
+  "version": "1.0.0",
+  "description": "Learning nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Sai Teja",
+  "license": "ISC",
+  "dependencies": {
+    "slugify": "^1.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
