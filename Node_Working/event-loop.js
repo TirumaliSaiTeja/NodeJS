@@ -1,5 +1,10 @@
 const fs = require('fs')
 
+// process.env.UV_THREADPOOL_SIZE = 2
+// It is used to set the size of the thread pool
+// env represents the environment
+// UV represents the libuv
+
 setTimeout(() => console.log('Timer 1 finished'), 0)
 setImmediate(() => console.log('Immediate 1 finished'))
 
