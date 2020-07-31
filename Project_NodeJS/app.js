@@ -1,16 +1,16 @@
-const express = require("express");
-const routes = require("./routes");
-const http = require("http");
-const path = require("path");
-const urlencoded = require("url");
-const bodyParser = require("body-parser");
-const json = require("json");
-const logger = require("logger");
-const methodOverride = require("method-override");
-const nano = require("nano")("http://localhost:5948");
+var express = require("express");
+var routes = require("./routes");
+var http = require("http");
+var path = require("path");
+var urlencoded = require("url");
+var bodyParser = require("body-parser");
+var json = require("json");
+var logger = require("logger");
+var methodOverride = require("method-override");
+var nano = require("nano")("http://localhost:5948");
 
-const db = nano.use("address");
-const app = express();
+var db = nano.use("address");
+var app = express();
 
 app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
@@ -26,14 +26,14 @@ app.get("/", routes.index);
 app.post("/createdb", function (req, res) {
   nano.db.create(req.body.dbname, function (err) {
     if (err) {
-      res.send("Error occured while creating database");
+      res.send("Error occured while creating database " + req.body.dbname);
       return;
     }
     res.send("Database" + req.body.dbname + "created sucessfully");
   });
 });
 
-app.post("./new_contact", function (req, res) {
+app.post("/new_contact", function (req, res) {
   var name = req.body.name;
   var phone = req.body.phone;
 
@@ -79,5 +79,5 @@ app.post("/delete_contact", function (req, res) {
 });
 
 http.createServer(app).listen(app.get("port"), function () {
-  console.log("Express server listening on port" + app.get("port"));
+  console.log("Express server listening on port " + app.get("port"));
 });
