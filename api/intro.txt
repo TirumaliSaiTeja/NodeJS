@@ -1,1 +1,43 @@
 API- Application programming interface
+
+it is a set of commands, functions, protocols, and objects that
+programmers can use to create software or interact with an external 
+system
+
+our server requests other someone else server for some bits and pieces 
+of data and we receives as a response using their api
+
+parameters to be consider while using api
+
+1. endpoint
+2. paths
+3. parameters
+4. authentication
+
+to add parameter in the url we need to add ? symbol and key value pair
+if there are multiple parameter we need to add & (ampersent) symbol
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
