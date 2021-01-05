@@ -17,6 +17,8 @@ parameters to be consider while using api
 to add parameter in the url we need to add ? symbol and key value pair
 if there are multiple parameter we need to add & (ampersent) symbol
 
+ 
+
 
 
 
