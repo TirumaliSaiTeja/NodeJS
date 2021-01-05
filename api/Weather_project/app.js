@@ -6,10 +6,17 @@ const app = express();
 
 app.get('/', function(req,res) {
 
-    const url = 'https://api.openweathermap.org/data/2.5/weather?appid=ff7cf33167733141e8ab14c846556858&q=london&units=metric'
+    const url = 'https://api.openweathermap.org/data/2.5/weather?appid=ff7cf33167733141e8ab14c846556858&q=hyderabad&units=metric'
 
     https.get(url, function(res){
-        console.log(res);
+        console.log(res.statusCode);
+
+        res.on('data', function(data){
+            const weatherData = JSON.parse(data)
+            const temp = weatherData.main.temp
+            const description = weatherData.weather[0].description
+            console.log(description)
+        })
     })
     res.send('Server is up and running');
 })
