@@ -2,11 +2,22 @@ const express = require('express');
 
 const https = require('https');
 
+const bodyParser = require('body-parser');
+
 const app = express();
 
-app.get('/', function(req,res) {
+app.use(bodyParser.urlencoded({extended: true}));
 
-    const url = 'https://api.openweathermap.org/data/2.5/weather?appid=ff7cf33167733141e8ab14c846556858&q=hyderabad&units=metric'
+app.get('/', function(req,res){
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.post('/', function(req,res){
+
+    const apikey = 'ff7cf33167733141e8ab14c846556858';
+    const query = req.body.cityName;
+
+    const url = 'https://api.openweathermap.org/data/2.5/weather?appid=' + apikey + '&q=' + query + '&units=metric'
 
     https.get(url, function(response){
         console.log(res.statusCode);
@@ -19,7 +30,7 @@ app.get('/', function(req,res) {
             const imageURl = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
 
             //description variable is available in index 0 of weather
-            res.write('<h1>the temperature in hyderabad is ' + temp + ' degree celcius</h1>');
+            res.write('<h1>the temperature in ' + query + ' is ' + temp + ' degree celcius</h1>');
             res.write('<p>The weather is curently ' + description + '</p>')
             res.write('<img src=' + imageURl + '>')
             res.send()
