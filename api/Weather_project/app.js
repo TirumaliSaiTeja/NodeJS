@@ -8,18 +8,19 @@ app.get('/', function(req,res) {
 
     const url = 'https://api.openweathermap.org/data/2.5/weather?appid=ff7cf33167733141e8ab14c846556858&q=hyderabad&units=metric'
 
-    https.get(url, function(res){
+    https.get(url, function(response){
         console.log(res.statusCode);
 
-        res.on('data', function(data){
+        response.on('data', function(data){
             const weatherData = JSON.parse(data)
             const temp = weatherData.main.temp
             const description = weatherData.weather[0].description
             //description variable is available in index 0 of weather
-            console.log(description)
+            res.write('<h1>the temperature in hyderabad is ' + temp + ' degree celcius</h1>');
+            res.write('<p>The weather is curently ' + description + '</p>')
+            res.send()
         })
     })
-    res.send('Server is up and running');
 })
 
 
