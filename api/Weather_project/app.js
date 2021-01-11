@@ -15,9 +15,13 @@ app.get('/', function(req,res) {
             const weatherData = JSON.parse(data)
             const temp = weatherData.main.temp
             const description = weatherData.weather[0].description
+            const icon = weatherData.weather[0].icon
+            const imageURl = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
+
             //description variable is available in index 0 of weather
             res.write('<h1>the temperature in hyderabad is ' + temp + ' degree celcius</h1>');
             res.write('<p>The weather is curently ' + description + '</p>')
+            res.write('<img src=' + imageURl + '>')
             res.send()
         })
     })
