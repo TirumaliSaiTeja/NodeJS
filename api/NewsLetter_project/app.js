@@ -4,6 +4,8 @@ const request = require('request');
 
 const app = express();
 
+// using public as static will load our css and  image properties
+
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: true}));
