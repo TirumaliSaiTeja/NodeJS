@@ -46,7 +46,7 @@ app.post('/', function(req,res){
 
     const options = {
         method: "POST",
-        auth: "saiteja:9bce763d340a8b0623c4d43e87c34ab3-us7"
+        auth: "saiteja:6e8931f8f5064fa6118c33cdf764f4e7-us7"
 
     }
 
@@ -74,7 +74,7 @@ app.post("/failure", function(req,res){
 })
 
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log('server running');
 })
 
