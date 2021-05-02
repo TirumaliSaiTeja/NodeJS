@@ -18,3 +18,21 @@ Web Server
 A Web Server is a software application which handles HTTP requests sent by the HTTP client, like web browsers, and returns web pages in response to the clients. Web servers usually deliver html documents along with images, style sheets, and scripts.
 
 Most of the web servers support server-side scripts, using scripting languages or redirecting the task to an application server which retrieves data from a database and performs complex logic and then sends a result to the HTTP client through the Web server.
+
+Event emitters
+All objects which emit events are the instances of events.EventEmitter.
+
+When an EventEmitter instance faces any error, it emits an 'error' event. When a new listener is added, 'newListener' event is fired and when a listener is removed, 'removeListener' event is fired.
+
+EventEmitter provides multiple properties like on and emit. on property is used to bind a function with the event and emit is used to fire an event.
+
+
+
+
+
+
+
+
+
+
+
