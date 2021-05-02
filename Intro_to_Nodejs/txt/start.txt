@@ -27,6 +27,11 @@ When an EventEmitter instance faces any error, it emits an 'error' event. When a
 EventEmitter provides multiple properties like on and emit. on property is used to bind a function with the event and emit is used to fire an event.
 
 
+Buffer 
+Buffer class is a global class that can be accessed in an application without importing the buffer module.
+
+
+
 
 
 
