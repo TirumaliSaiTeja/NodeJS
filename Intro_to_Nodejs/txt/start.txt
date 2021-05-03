@@ -33,7 +33,12 @@ Buffer class is a global class that can be accessed in an application without im
 Intro to express
 Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is an open source framework developed and maintained by the Node.js foundation.
 
+app.method(path, handler)
+This METHOD can be applied to any one of the HTTP verbs – get, set, put, delete. An alternate method also exists, which executes independent of the request type.
 
+Path is the route at which the request will run.
+
+A special method, all, is provided by Express to handle all types of http methods at a particular route using the same function.
 
 
 
