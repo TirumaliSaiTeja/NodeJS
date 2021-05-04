@@ -67,7 +67,7 @@ DELETE
 The DELETE method requests that the server delete the specified resource.
 
 
-
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. These functions are used to modify req and res objects for tasks like parsing request bodies, adding response headers, etc.
 
 
 
