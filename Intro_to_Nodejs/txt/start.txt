@@ -81,6 +81,9 @@ Session management
 Personalization(Recommendation systems)
 User tracking
 
+Form data
+Forms are an integral part of the web. Almost every website we visit offers us forms that submit or fetch some information for us. To get started with forms, we will first install the body-parser(for parsing JSON and url-encoded data) and multer(for parsing multipart/form data) middleware.
+
 
 
 
